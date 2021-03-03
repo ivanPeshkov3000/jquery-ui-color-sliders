@@ -5,7 +5,7 @@ $(".slider").slider({
   min: 0,
   value: 127,
   range: "min",
-  slide: handleSliderColor(setBGColor)
+  slide: handleSliderColor(setBGColor, [127,127,127])
 });
 
 $(".switch-color-control").button()
@@ -14,10 +14,11 @@ $(".switch-color-control").button()
 /**
  * Принимает показания слайдеров, и собирает их в строку вида 'rgb(xxx, xxx, xxx)', и передает в коллбек "cb"
  * ..наверно следовало разделить на две функции
- * @param {function} cb 
+ * @param {function} cb - callback 
+ * @param {number[]} initialRGBColorArr - array RGB like
  */
-function handleSliderColor(cb) {
-  const rgbChannels = [127, 127, 127];
+function handleSliderColor(cb, initialRGBColorArr) {
+  const rgbChannels = initialRGBColorArr;
   return function(ev, ui) {
     $(this).is($("#red"))
       ? rgbChannels[0] = ui.value
@@ -55,13 +56,13 @@ $(".switch-color-control").change(ev => {
 
     const rgbArr = rgbStringToArray($("#preview-bg").css("background-color"));
     setSliderColor(rgbArr);
-    $('.slider').slider("option", { slide: handleSliderColor(setBGColor) });
+    $('.slider').slider("option", { slide: handleSliderColor(setBGColor, rgbArr) });
 
   } else if (ev.target.value == "text-color") {
 
     const rgbArr = rgbStringToArray($("#preview-text").css("color"));
     setSliderColor(rgbArr);
-    $('.slider').slider("option", { slide: handleSliderColor(setTextColor) });
+    $('.slider').slider("option", { slide: handleSliderColor(setTextColor, rgbArr) });
 
   } else {
     console.warn("Just do refactoring");
