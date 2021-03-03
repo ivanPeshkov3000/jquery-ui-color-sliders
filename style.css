@@ -1,0 +1,44 @@
+.app-container header {
+  margin: 1rem 0 0 2rem;
+}
+.app-container main{
+  display: flex;
+  flex-direction: row;
+}
+.sliders-block, .preview-block {
+  width: 40%;
+  margin: 2rem;
+}
+.slider {
+  margin: 1rem 0;
+}
+.preview-block {
+  border: 1px solid gray;
+  border-radius: .5rem;
+  background: rgb(127,127,127);
+}
+.preview-content {
+  padding: 0 1rem;
+}
+#red .ui-slider-range {
+  background: red;
+}
+#red .ui-slider-handle {
+  border: 1px solid red;
+}
+#green  .ui-slider-range {
+  background: #0f0;
+}
+#green .ui-slider-handle {
+  border: 1px solid #0f0;
+}
+#blue  .ui-slider-range {
+  background: blue;
+}
+#blue .ui-slider-handle {
+  border: 1px solid blue;
+}
+
+.ui-slider .ui-slider-handle.ui-state-active {
+  background: white;
+}

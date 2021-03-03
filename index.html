@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <fieldset>
+        <legend>Select:</legend>
+        <input type="radio" id="text-color" value="text-color" name="switch" class="switch-color-control"></input>
+        <label for="text-color">color</label>
+        <input type="radio" id="bg-color" value="bg-color" name="switch" class="switch-color-control"></input>
+        <label for="bg-color">backgroundColor</label>
+      </fieldset>
+    </header>
+    <main>
+      <div class="sliders-block">
+        <div id="red" class="slider"></div>
+        <div id="green" class="slider"></div>
+        <div id="blue" class="slider"></div>
+      </div>
+      <div id="preview-bg" class="preview-block">
+        <p id="preview-text" class="preview-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt sequi facere sint hic? Maiores eveniet debitis beatae dolores fugiat! Ea suscipit minima deleniti sint. Excepturi cum voluptates consequuntur non.</p>
+      </div>
+    </main>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
